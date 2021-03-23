@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "icon" href = "https://templatemo.com/templates/templatemo_466_cafe_house/img/favicon.ico" type = "image/x-icon">
+    <style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+    }
+
+    body{
+        background:  #e4e4e4;
+        overflow-x: hidden;
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+        /* position: fixed; */
+        background: black;
+        align-items: center;
+        width: 100vw;
+        height: 81px;
+        justify-content: center;
+        z-index: 8;
+        width: 100%;
+
+    }
+
+    #head{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        max-width: 960px;
+        width: 100%;
+        
+    }
+
+    #heading1{
+        display: inline;
+        padding: 10px 0;
+        
+    }
+
+    #heading1 img{
+        vertical-align: bottom;
+    }
+
+    #heading1 h1{
+        color: #c79c60;
+        display: inline-block;
+        font-size: 32px;
+        font-weight: lighter;
+        margin: 0 10px;
+        font-family: 'Damion', cursive;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+
+    nav ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    nav ul li a{
+        color: white;
+        padding: 15px 15px 20px 30px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    #navlist1 li a.active, nav ul li a.active{
+        background: url("https://templatemo.com/templates/templatemo_466_cafe_house/img/logo.png") no-repeat, url("https://templatemo.com/templates/templatemo_466_cafe_house/img/nav-underline.png") no-repeat;
+        background-size: 20px, 74px 17px;
+        background-position: 0% 30%, center bottom;
+        color: #c79c60;
+
+    }
+
+
+    #navlist1 li a:hover,  ul li a:active, a:hover {
+        color: #c79c60;
+        text-decoration: none;
+    }
+
+    #ham{
+        display: none;
+    }
+
+    @media screen and (max-width: 767px){
+
+    #heading1{
+        padding-left: 10px;
+    }
+
+    #menu #shadowimg{
+        background: url("https://templatemo.com/templates/templatemo_466_cafe_house/img/shadow.png") no-repeat left bottom !important;
+        padding: 4px !important;
+        margin-bottom: 0 !important;
+    }
+
+    #menu{
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    #pic1, #pic3{
+        display: none;
+    }
+    
+    #heading{
+        margin-left: 15px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    #heading h2{
+        width: 70% !important;
+    }
+
+    #menubar{
+        padding-left: 15px !important;
+    }
+
+
+
+    #navlist{
+        display: none;
+    } 
+
+    /* nav ul{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    } */
+
+    #ham:hover #navlist1{
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin-top: 20px;
+        
+    }
+
+    
+    #ham{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        cursor: pointer;
+        color: #c79c60;
+        font-size: 30px;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        background-color: rgba(0,0,0,0.6);
+        padding: 6px 15px;
+        z-index: 1000;
+    }
+
+    #ham i{
+        align-self: flex-end;
+    }
+}
+
+    #ham #navlist1{
+        display: none;
+        height: 133px;
+        padding: 2px;
+        justify-content: space-between;
+        
+    }
+
+    #ham #navlist1 li a{
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        color: white;
+
+    }
+
+    #main{
+        position: absolute;
+        top:  81px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100vw;
+        
+
+    }
+
+    #bg{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+       
+    }
+
+    #uppercontent{
+        background: #282726;
+        height: 900px;
+        width: 100%;
+    }
+
+    
+
+    #content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: -122px;
+        color: white;
+        align-items: center;
+        max-width: 650px;
+        
+    }
+
+    #content h2{
+        font-size: 56px;
+        font-weight: 100;
+        color: lightgray;
+        font-family: 'Damion',cursive;
+        text-align: center;
+    }
+
+    #content h1{
+        font-size: 62px;
+        color: #c79c60;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 100;
+        text-align: center;
+    }
+
+    #content p{
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        color: slategrey;
+        text-align: justify;
+        font-size: 17px;
+        padding: 0 22px;
+    }
+
+    button{
+        background-image: url("https://templatemo.com/templates/templatemo_466_cafe_house/img/tm-brown-button.png");
+        color: #c79c60;
+        width: 210px;
+        height: 49px;
+        border: none;
+        background-color: transparent;
+        font-size: 20px;
+        background-size: cover;
+        margin: 20px 0px;
+
+    }
+
+    button:hover{
+        color: white !important;
+        cursor: pointer !important;
+    }
+
+    
+    #pic4{
+        margin-top: -25vw;
+    }
+
+    /* @media(min-width:990px) and (max-width: 2000px){
+       #main{
+           width: 100vw ;
+       }
+    } */
+
+    @media(max-width: 990px){
+        #pic4{
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        #content h2{
+            font-size: 52px !important;
+        }
+
+        #content h2 img{
+            width: 10vw;
+        }
+
+        #menubar{
+            flex-direction: column !important;
+            width: 750px !important;
+            padding-left: 15px !important;
+
+        }
+
+        #carditem{
+            width: 100% !important;
+            padding-left: 0 !important;
+        }
+
+        
+    }
+ 
+    @media(max-width: 991px)
+    {
+        #bg img{
+            width: 250px;
+        }
+    }
+
+    @media(max-width: 667px){
+        #uppercontent{
+            height: 785px;
+        }
+
+        #pic4{
+            margin-top: -40vw;
+        }
+    }
+
+    @media(min-width: 667px) and (max-width: 1100px){
+        #uppercontent{
+            height: 840px;
+        }
+
+        #pic4{
+            margin-top: -40vw;
+        }
+    }
+
+    #menu{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        max-width: 960px;
+        margin: 60px auto;
+        width: 100%;
+        
+    }
+
+    #menu #shadowimg{
+        background: url("https://templatemo.com/templates/templatemo_466_cafe_house/img/shadow.png") no-repeat center;
+        margin-bottom: -48px;
+    }
+
+    #menu img{
+        border-radius: 50%;
+        border: 8px solid white;
+     
+    }
+
+    #container{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #container h2{
+        font-size: 30px;
+        font-family: 'Damion', cursive;
+        color: #c79c60;
+        font-weight: 100;
+        padding: 10px 0px;
+    }
+
+    #container h3{
+        font-size: 30px;
+        font-family: inherit;
+        padding: 10px 0px;
+        font-weight: 100;
+
+    }
+
+    #container p{
+        text-align: justify;
+        padding: 10px 0px;
+        color: #333;
+        font-size: 14px;
+    }
+
+    #list{
+        max-width: 960px;
+        width: 100%;
+    }   
+
+    #heading{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }   
+
+    #heading h2{
+        text-align: left;
+        color: #c79c60;
+        font-size: 30px;
+        font-family: 'Damion', cursive;
+        font-weight: 100;
+        width: 30%;
+
+    }
+
+    #heading h2 img{
+        margin-right: 10px;
+    }
+
+    #line{
+        
+        width: 100%;
+        height: 41px;
+
+    }
+
+    #line hr{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid #eee;
+        border-color: #c79c60;
+    }
+
+
+
+    #menubar{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 960px;
+            width: 100% !important;
+            justify-content: space-between;
+            margin-right: auto;
+            margin-left: auto;  
+           
+        
+    }
+
+    #menubar ul{
+        padding-top: 0.6vw;
+        background: url("https://templatemo.com/templates/templatemo_466_cafe_house/img/vertical-menu-bg.png") no-repeat;
+        width: 240px;
+        background-size: contain;
+        margin-bottom: 30px;
+
+    }
+
+    #menubar ul li{
+        padding: 7px;
+        list-style-type: none;
+        width: 163px;
+        font-size: 15px;
+        color: #7c6a51;
+        text-align: center;
+
+    }
+
+    #menubar ul li:hover{
+        color: #bb894e;
+        cursor: pointer;
+    }
+
+    #carditem{
+        width: 75%;
+        padding-left: 30px;
+        padding-right: 15px;
+    }
+
+    .cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 652px;
+        background: white;
+        cursor: pointer;
+        margin-bottom: 20px;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .info{
+        max-width: 325px;
+        color: #333;
+    }
+
+    .circle{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(82, 76, 76);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: relative;
+    }
+
+    .circle h1{
+        border: 2px solid rgb(174,174,174);
+        border-radius: 50%;
+        width: 85px;
+        height: 85px;
+        transition: all 0.3s ease;
+        text-align: center;
+        padding-top: 7px;
+        font-size: 40px;
+        color: rgb(174,174,174);
+        font-family: 'Damion', cursive;
+        font-weight: 100;
+
+    }
+
+    .currency{
+        font-size: 20px;
+        position: absolute;
+        top: 24px;
+        left: 22px;
+    }
+
+    .subhead{
+        margin-top: 0;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+        font-size: 24px;
+        font-weight: 100;
+    }
+
+    .info p{
+        text-align: justify;
+    }
+
+    @media screen and (max-width: 650px){
+
+        #menubar{
+            width: 97% !important;
+            margin-left: 15px;
+        }
+        
+        
+
+        .cards{
+            flex-direction: column;
+        }
+
+        .info{
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            max-width: 100%;
+        }
+
+        .info p{
+            text-align: center;
+        }
+
+    }
+
+    @media(max-width: 400px){
+        #content h2{
+            font-size: 34px !important;
+        }
+    }
+
+    @media(min-width: 767px) and (max-width: 990px) {
+        #heading h2{
+            width: 40% !important;
+            padding-left: 10px !important;
+        }
+        
+    }
+
+
+    footer{
+        background-color: #302f2f;
+        color: white;
+        padding-top: 50px;
+        width: 100vw;
+    }
+    .foot{
+        display: flex;
+        flex-direction: row;
+        padding: 30px;
+        margin: auto;
+        max-width: 960px;
+        margin-bottom: 60px;
+        justify-content: space-between;
+        
+    }
+
+    .main-menu{
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .main-menu ul li a:hover{
+        color: #c79c60 !important;
+    }
+
+    .about-us{
+        width: 41.77%;
+    }
+
+    .social{
+        width: 33.33%;
+    }
+
+    .footer-div-title {
+    color: white;
+    font-size: 21px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    background-color: #505050;
+    color: white;
+    display: inline-block;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    width: 35px;
+    height: 35px;
+    border-radius: 2px;
+    text-align: center;
+    padding-top: 4px;
+    margin-right: 10px;
+}
+
+.social-icon:hover{
+    background-color: #bb894e;
+}
+
+.social-icon i{
+    color: white;
+}
+
+@media(max-width: 992px){
+    .foot{
+        flex-direction: column;
+    }
+
+    .main-menu{
+        width: 100%;
+    }
+
+    .about-us{
+        width: 100%;
+    }
+
+    .social{
+        width: 100%;
+    }
+}
+
+.foot-footer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 76.8px;
+    width: 100vw;
+    background: white;
+    color: black;
+    font-weight: 100;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
+    
+
+    
+
+
+
+
+</style>
+</head>
+<body>
+    <header>
+        <div id="head">
+        <div id="heading1">
+            <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/logo.png" alt="error">
+            <h1>Cafe House</h1>
+        </div>
+        <div id="ham">
+            <i class="fa fa-bars"></i>
+            <ul id="navlist1">
+                <li><a href="index.html" >HOME</a></li>
+                <li><a href="today.html">TODAY SPECIAL</a></li>
+                <li><a href="menu.html" class="active" >MENU</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+        
+        <nav  id="navlist">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="today.html">TODAY SPECIAL</a></li>
+                <li><a href="menu.html" class="active">MENU</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        </div>
+        
+        
+    </header>
+
+    <div class="box" id="main">
+        <div id="uppercontent">
+        <div id="bg">
+        <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/light.png" alt="" id="pic1" >
+        <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/light.png" alt="" id="pic2" >
+        <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/light.png" alt="" id="pic3" >
+        </div>
+        <div id="content">
+        <h2><img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/header-line.png" alt="error"> Our Menus<img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/header-line.png" alt="error"></h2>
+        <h1>CAFE HOUSE</h1>
+        <p style="color: #949494;">Cafe House template is a mobile-friendly responsive <span style="color: #c79c60;"> Bootstrap v3.3.5</span> layout by <span style="color: #c79c60;"> templatemo.</span> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculusnec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+        <button>Read More</button>
+        </div>
+        </div>
+        <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/table-set.png" alt="" id="pic4">
+
+
+   
+
+    
+
+<div class="box" id="menu">
+    <div id="container">
+    <h2>Variety of Menus</h2>
+    <h3>Cafe House</h3>
+    <p>This is free HTML5 website template from <span style="color: rgb(10, 153, 209);"> template</span><span style="color: lime;">mo</span>. Fndimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Ettiam sit amet orci eget eros faucibus tincidunt  tempus. Donec vitae sapien ut libero venenatis faucibus. Ettiam sit amet orci eget eros faucibus tincidunt.</p>
+    <button>Read More</button>
+    </div>
+    <div id="shadowimg">
+    <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/1.jpg " alt="not found">
+    </div>
+</div>
+<div class="box" id="list">
+    <div id="heading">
+    <h2><img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/logo.png">Our Menus</h2>
+    <div id="line"><hr></div>
+    </div>
+    <div id="menubar">
+        <ul>
+            <li>AFFOGATO</li>
+            <li>CAFE` AMERICANO</li>
+            <li>CAFFE` LATTE</li>
+            <li>COFFEE MILK</li>
+            <li>CAFE` MOCHA</li>
+            <li>CAPPUCCINO</li>
+            <li>ESPRESSO</li>
+            <li>ICED COFFEE</li>
+            <li>INSTANT COFFEE</li>
+            <li>MOCHA</li>
+            <li>BLACK COFFEE</li>
+            
+            
+        </ul>
+        <div id="carditem">
+            
+        <div class="cards">
+            <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/menu-1.jpg" alt="">
+            <div class="info">
+            <h2 class="subhead">Americano 1</h2>
+            <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. Red ipsum.</p>
+            </div>
+            <div class="circle">
+                <h1>
+                <span class="currency">$</span>30
+            </h1>
+            </div>
+        </div>
+        <div class="cards">
+            <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/menu-2.jpg" alt="">
+            <div class="info">
+            <h2 class="subhead">Americano 2</h2>
+            <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. Red ipsum.</p>
+            </div>
+            <div class="circle">
+                <h1>
+                <span class="currency">$</span>20
+            </h1>
+            </div>
+        </div>
+        <div class="cards">
+            <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/menu-3.jpg" alt="">
+            <div class="info">
+            <h2 class="subhead">Americano 3</h2>
+            <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. Red ipsum.</p>
+            </div>
+            <div class="circle">
+                <h1>
+                <span class="currency">$</span>15
+            </h1>
+            </div>
+        </div>
+        <div class="cards">
+            <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/menu-4.jpg" alt="">
+            <div class="info">
+            <h2 class="subhead">Americano 4</h2>
+            <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. Red ipsum.</p>
+            </div>
+            <div class="circle">
+                <h1>
+                <span class="currency">$</span>25
+            </h1>
+            </div>
+        </div>
+        <div class="cards">
+            <img src="https://templatemo.com/templates/templatemo_466_cafe_house/img/menu-5.jpg" alt="">
+            <div class="info">
+            <h2 class="subhead">Americano 5</h2>
+            <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. Red ipsum.</p>
+            </div>
+            <div class="circle">
+                <h1>
+                <span class="currency">$</span>45
+                </h1>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<footer>
+    <div class="foot">
+      <div class="main-menu">
+            <h3 class="footer-div-title">Main Menu</h3>
+            <ul style="list-style-type: none;  padding-left: 0;">
+              <li style="padding-top: 15px;"><a href="#" style="text-decoration: none; color: white;">Home</a></li>
+              <li style="padding-top: 15px;"><a href="#" style="text-decoration: none; color: white;">About Us</a></li>
+              <li style="padding-top: 15px;"><a href="#" style="text-decoration: none; color: white;">Directory</a></li>
+              <li style="padding-top: 15px;"><a href="#" style="text-decoration: none; color: white;">Blog</a></li>
+              <li style="padding-top: 15px;"><a href="#" style="text-decoration: none; color: white;">Our Services</a></li>
+            </ul>
+      </div>
+      <div class="about-us">
+            <h3 class="footer-div-title">About Us</h3>
+            <p style="margin-top: 15px;">Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+            <p style="margin-top: 15px;">Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.</p>
+      </div>
+      <div class="social">
+            <h3 class="footer-div-title">Get Social</h3>
+            <p style="margin-bottom: 10px;">Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante.</p>
+        <div class="social-icons" style="margin-top: 25px; min-width: 300px ;">
+              <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+              <a href="#" class="social-icon"><i class="fa fa-youtube"></i></a>
+              <a href="#" class="social-icon"><i class="fa fa-behance"></i></a>
+        </div>
+      </div>      
+    </div>
+    
+      <div class="foot-footer">
+        <div class="copyright">
+         <p>@2021 made by harsh verma and vaibhav mohite </p>
+       </div>  
+     </div>
+    </div>
+    </footer>
+    </div>
+
+</body>
+</html>
